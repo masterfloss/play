@@ -1,7 +1,7 @@
 import re
 import pandas as pd
-from textblob import TextBlob
 import matplotlib.pyplot as plt
+from textblob import TextBlob
 import networkx as nx
 
 class PlayAnalysis:
@@ -16,9 +16,10 @@ class PlayAnalysis:
 
         dialogue = []
         current_act = "Prologue"  # Default section
+        current_scene = "scene"  # Default scene
         current_character = "Narrator"
 
-        for i, section in enumerate(sections):
+        for section in sections:
             if re.match(r'ACT [IVX]+|EPILOGUE', section):
                 current_act = section  # Update current act/epilogue
                 continue
@@ -29,21 +30,39 @@ class PlayAnalysis:
                 if not line:
                     continue
 
+                # Detect and update the current scene
+                scene_match = re.match(r'^(Scene\s*\d+|Scene\s*[IVX]+):', line, re.IGNORECASE)
+                if scene_match:
+                    current_scene = scene_match.group(1)  # Update the current scene
+                    # Add the description of the scene as a Narrator line
+                    scene_description = line[len(scene_match.group(1)) + 1:].strip()
+                    if scene_description:
+                        dialogue.append((current_act, current_scene, "Narrator", scene_description))
+                    continue
+
+                # Detect dialogue lines
                 match = re.match(r'^([A-Z\s]+):', line)
                 if match:
                     current_character = match.group(1).strip()
                     speech = line[len(current_character) + 1:].strip()
-                    dialogue.append((current_act, current_character, speech))
+                    dialogue.append((current_act, current_scene, current_character, speech))
                 else:
-                    dialogue.append((current_act, "Narrator", line.strip()))
+                    # Treat any remaining lines as Narrator speech
+                    dialogue.append((current_act, current_scene, "Narrator", line.strip()))
 
         return dialogue
 
     def create_dataframe(self):
-        df = pd.DataFrame(self.dialogue, columns=['Act', 'Character', 'Speech'])
+        # Create the DataFrame with columns: Act, Scene, Character, Speech
+        df = pd.DataFrame(self.dialogue, columns=['Act', 'Scene', 'Character', 'Speech'])
+        # Add sentiment analysis for Polarity and Subjectivity
         df['Polarity'] = df['Speech'].apply(lambda x: TextBlob(x).sentiment.polarity)
         df['Subjectivity'] = df['Speech'].apply(lambda x: TextBlob(x).sentiment.subjectivity)
         return df
+
+    def display_dataframe(self):
+        # Display the DataFrame in a readable format
+        print(self.df)
 
     def plot_subjectivity_evolution(self):
         plt.figure(figsize=(10, 6))
@@ -78,31 +97,37 @@ class InteractionNetwork:
 
     def create_graph(self):
         G = nx.Graph()
+        # Add all unique characters as nodes in the graph
         for character in self.df["Character"].unique():
             G.add_node(character)
 
+        # Iterate over the DataFrame to create edges
         for i in range(1, len(self.df)):
             character1 = self.df.at[i - 1, "Character"]
             character2 = self.df.at[i, "Character"]
 
+            # Only create edges between different characters
             if character1 != character2:
                 weight = self.df.at[i, "Polarity"]
-                act = self.df.at[i, "Act"]
+                scene = self.df.at[i, "Scene"]  # Group by Scene instead of Act
 
+                # Update the graph with edge information
                 if G.has_edge(character1, character2):
                     G[character1][character2]["weight"] += weight
-                    G[character1][character2]["acts"].add(act)
+                    G[character1][character2]["scenes"].add(scene)
                 else:
-                    G.add_edge(character1, character2, weight=weight, acts={act})
+                    G.add_edge(character1, character2, weight=weight, scenes={scene})
 
         return G
 
     def visualize_network(self):
+        # Create edge labels to include weight and scenes
         edge_labels = {
-            (u, v): f"{d['weight']} ({', '.join(sorted(d['acts']))})"
+            (u, v): f"{d['weight']} ({', '.join(sorted(d['scenes']))})"
             for u, v, d in self.graph.edges(data=True)
         }
 
+        # Draw the graph
         plt.figure(figsize=(12, 10))
         pos = nx.spring_layout(self.graph, seed=42)
         nx.draw(
@@ -117,5 +142,5 @@ class InteractionNetwork:
         )
         nx.draw_networkx_edge_labels(self.graph, pos, edge_labels=edge_labels, font_size=10)
 
-        plt.title("Character Interaction Network with Acts", size=15)
+        plt.title("Character Interaction Network with Scenes", size=15)
         plt.show()
