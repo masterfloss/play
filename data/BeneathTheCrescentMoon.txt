@@ -1,7 +1,8 @@
 Beneath the Crescent Moon 
 
 ACT I: The Choice
-Scene: A bustling square in a Hispanic medieval town. The scent of spices and the sound of traders fill the air. Ariana, a Moorish woman of rare beauty, sits near a fountain, embroidering intricate floral patterns. Martim, a Christian merchant, approaches her with a hesitant smile. An Arabian knight, Sidi Rashid watches from the shadows, his presence commanding.
+Scene1: 
+A bustling square in a Hispanic medieval town. The scent of spices and the sound of traders fill the air. Ariana, a Moorish woman of rare beauty, sits near a fountain, embroidering intricate floral patterns. Martim, a Christian merchant, approaches her with a hesitant smile. An Arabian knight, Sidi Rashid watches from the shadows, his presence commanding.
 MARTIM: Ariana, even amidst such beauty as this square holds, you outshine it all.
 ARIANA: Flattery, Martim? It is a poor currency in a world that values strength.
 MARTIM: It is not flattery if it is truth. But strength? Must a woman so vibrant speak of strength as her only need?
@@ -14,7 +15,8 @@ RASHID: Come with me, Ariana. I will show you gardens that rival paradise, where
 (Her breath catches, and after a long pause, she takes Rashid's arm. Martim watches in silence, his face a mask of quiet heartbreak.)
 
 ACT II: Betrayal
-Scene: The town's gates are under siege by the Christian army. The air is filled with the clang of swords and the cries of soldiers. Sidi Rashid stands in his armor, his expression uncertain. Ariana storms toward him, her voice sharp.
+Scene1: 
+The town's gates are under siege by the Christian army. The air is filled with the clang of swords and the cries of soldiers. Sidi Rashid stands in his armor, his expression uncertain. Ariana storms toward him, her voice sharp.
 ARIANA: Rashid, the gates are crumbling! The people look to you for leadership.
 RASHID: The walls will hold. This city has survived worse.
 ARIANA: Do not lie to me! I see the fear in your eyes. Will you lead, or will you run?
@@ -25,19 +27,22 @@ ARIANA: No, Rashid. I see you for what you are—a man who wears strength as a m
 (As the gates fall and the city descends into chaos, Rashid flees into the night. Ariana stands motionless, her face a mix of anger and heartbreak. She is captured by the advancing Christian forces.)
 
 ACT III: Shadows of the Past
-Scene1: A brothel in Morocco. Sidi Rashid reclines on a pile of cushions, surrounded by courtesans. The air is heavy with perfume and laughter, but Rashid's boasts are hollow.
+Scene1: 
+A brothel in Morocco. Sidi Rashid reclines on a pile of cushions, surrounded by courtesans. The air is heavy with perfume and laughter, but Rashid's boasts are hollow.
 RASHID: Drink, my beauties, and listen! They called me the Lion of the South, the defender of cities. My name will be sung for generations.
 COURTISAN1: And your lady? Does she sing of you as well?
 RASHID: Ariana? A passing fancy. She wept for me when I left, but women are like flowers—beautiful, fleeting, and easily replaced.
 (The courtesans exchange knowing smiles, their laughter edged with mockery. Rashid continues to drink, oblivious.)
-Scene2: A Christian nobleman's estate in Iberia. Ariana, now a servant, scrubs the floor. Her hands are raw, but her posture is proud. Martim enters, carrying a shawl and bread.
+Scene2: 
+A Christian nobleman's estate in Iberia. Ariana, now a servant, scrubs the floor. Her hands are raw, but her posture is proud. Martim enters, carrying a shawl and bread.
 MARTIM: Ariana. Let me ease your burden.
 ARIANA: A burden is all that remains when dreams are shattered.
 MARTIM: Not dreams, Ariana. Hope. Come with me. Let us leave behind the ruins of what was and build something new.
 ARIANA: You would offer me hope, knowing I once chose another?
 MARTIM: The heart is not bound by the past, only by what it dares to reach for.
 (Ariana looks at him, her eyes glistening with tears. Slowly, she takes his hand.)
-Scene3: A quiet moment by a riverbank. Ariana and Martim sit together, watching the water flow. She gazes at the horizon, her voice wistful.
+Scene3: 
+A quiet moment by a riverbank. Ariana and Martim sit together, watching the water flow. She gazes at the horizon, her voice wistful.
 ARIANA: This peace... it reminds me of my childhood on the banks of the Zayanderud.
 MARTIM : Is this in Mauritania?
 ARIANA: No, much farther away to the east.
