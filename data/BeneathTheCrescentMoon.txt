@@ -20,7 +20,7 @@ RASHID: The walls will hold. This city has survived worse.
 ARIANA: Do not lie to me! I see the fear in your eyes. Will you lead, or will you run?
 RASHID: Survival is the highest form of strength. Sacrificing oneself foolishly is not bravery.
 ARIANA: You spoke of devotion, yet now you cower. You promised safety, but you abandon us to ruin.
-RASHID: I do what I must to live. Ariana, come with me. We can escape together.
+RASHID: I do what I must to live. Ariana, I must go. You stay....
 ARIANA: No, Rashid. I see you for what you are—a man who wears strength as a mask but lacks the courage to stand firm.
 (As the gates fall and the city descends into chaos, Rashid flees into the night. Ariana stands motionless, her face a mix of anger and heartbreak. She is captured by the advancing Christian forces.)
 
